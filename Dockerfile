@@ -11,9 +11,10 @@ RUN apk add --no-cache \
     g++ \
     libressl-dev \
     lksctp-tools-dev \
-    linux-headers
+    linux-headers \
+    build-base \
+    alpine-sdk
 
-RUN g++ --version
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION 
