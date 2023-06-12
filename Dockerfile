@@ -68,7 +68,7 @@ ENV RADIO_IFACE=eth0
 ENV AMF_HOSTNAME=amf
 ENV GNB_HOSTNAME=localhost
 
-COPY *.js /app
+COPY amazon-search.js  /
 
 WORKDIR / #set the workdir back so it doesnt break the entrypoint
 
