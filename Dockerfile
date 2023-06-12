@@ -56,7 +56,7 @@ RUN set -x \
     && npm install puppeteer-core \
       \
       # Cleanup
-      && apk del --no-cache make gcc g++ python binutils-gold gnupg libstdc++ \
+      && apk del --no-cache make gcc g++ gnupg libstdc++ \
       && rm -rf /usr/include \
       && rm -rf /var/cache/apk/* /root/.node-gyp /usr/share/man /tmp/* \
       && echo
