@@ -34,7 +34,7 @@ COPY --from=builder /tmp/openverso-images/images/ueransim/etc/ueransim/* /etc/ue
 COPY --from=builder /tmp/openverso-images/images/ueransim/entrypoint.sh /entrypoint.sh
 
 
-WORKDIR /app #set the workdir to something other than / so the npm install doesn't fail
+WORKDIR /app # set the workdir to something other than / so the npm install doesnt fail
 
 RUN set -x \
     && apk update \
@@ -70,7 +70,7 @@ ENV GNB_HOSTNAME=localhost
 
 COPY *.js /app
 
-WORKDIR / #set the workdir back so it doesn't break the entrypoint
+WORKDIR / #set the workdir back so it doesnt break the entrypoint
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/bin/sh"]
