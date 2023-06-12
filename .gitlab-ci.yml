@@ -3,6 +3,7 @@ build-and-push-to-ecr:
   variables: 
     AWS_DEFAULT_REGION: us-east-1
     CI_REGISTRY_IMAGE: 935370813358.dkr.ecr.us-east-1.amazonaws.com/cntf-ueransim-puppeteer
+    IMAGE_TAG: 3.2.6
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
