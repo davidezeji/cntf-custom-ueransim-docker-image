@@ -5,6 +5,7 @@ build:
     entrypoint: [""]
   before_script:
     - printf $(uname -r)
+    - printf $()
   script:
     - /kaniko/executor
       --context "${CI_PROJECT_DIR}"

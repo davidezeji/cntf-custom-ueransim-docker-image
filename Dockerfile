@@ -8,6 +8,8 @@ ENV VERSION=$version
 
 ENV UNAME=$UNAME
 
+RUN apt update && apt search lib-ssl && apt search libcrypto
+
 RUN apt-get update && apt-get install -y \
     git \
     cmake \
