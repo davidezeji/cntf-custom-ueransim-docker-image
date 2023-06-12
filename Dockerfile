@@ -53,7 +53,7 @@ RUN set -x \
     liblksctp \
     libstdc++ \
 
-    && npm install puppeteer-core --silent \
+    && npm install puppeteer-core \
       \
       # Cleanup
       && apk del --no-cache make gcc g++ python binutils-gold gnupg libstdc++ \
