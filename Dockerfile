@@ -25,7 +25,7 @@ RUN cd /tmp/UERANSIM && echo "cmake --version" && make
 RUN cd /tmp && git clone https://github.com/Gradiant/openverso-images.git --depth=1
 
 
-FROM alpine:latest
+FROM node:20-alpine
 
 COPY --from=builder /tmp/UERANSIM/build/* /usr/local/bin/
 
@@ -35,15 +35,6 @@ COPY --from=builder /tmp/openverso-images/images/ueransim/entrypoint.sh /entrypo
 
 
 
-RUN apk add --no-cache \
-    bash \
-    bind-tools \
-    curl \
-    gettext \
-    iperf3 \
-    iproute2 \
-    liblksctp \
-    libstdc++
 
 RUN set -x \
     && apk update \
@@ -61,6 +52,7 @@ RUN set -x \
     iproute2 \
     liblksctp \
     libstdc++ \
+
     && npm install puppeteer-core --silent \
       \
       # Cleanup
