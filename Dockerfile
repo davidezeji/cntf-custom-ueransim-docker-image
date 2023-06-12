@@ -4,8 +4,6 @@ ARG version=3.1.0
 
 ENV VERSION=$version
 
-ENV UNAME=$UNAME
-
 RUN apk add --no-cache \
     git \
     cmake \
@@ -13,7 +11,7 @@ RUN apk add --no-cache \
     g++ \
     libressl-dev \
     lksctp-tools-dev \
-    linux-headers-5.10.179-166.674.amzn2.x86_64n
+    linux-headers
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION 
