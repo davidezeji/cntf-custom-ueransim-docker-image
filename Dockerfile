@@ -15,13 +15,7 @@ RUN apk add --no-cache \
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION 
-
     
-RUN cd /tmp/UERANSIM && echo "cmake --version" && make
-
-RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
-    cd UERANSIM && git checkout tags/v$VERSION
-
 RUN cd /tmp/UERANSIM && echo "cmake --version" && make
 
 RUN cd /tmp && git clone https://github.com/Gradiant/openverso-images.git --depth=1
