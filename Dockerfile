@@ -31,7 +31,7 @@ COPY --from=builder /tmp/UERANSIM/build/* /usr/local/bin/
 
 COPY --from=builder /tmp/openverso-images/images/ueransim/etc/ueransim/* /etc/ueransim/
 
-COPY --from=builder /tmp/openverso-images/entrypoint.sh /entrypoint.sh
+COPY --from=builder /tmp/openverso-images/images/ueransim/entrypoint.sh /entrypoint.sh
 
 
 
