@@ -8,7 +8,7 @@ ENV VERSION=$version
 
 ENV UNAME=$UNAME
 
-RUN apt update && apt search lib-ssl && apt search libcrypto
+RUN apt update && apt search libssl
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     make \
     g++ \
     libssl-dev \
-    libcrypto++8 \
+    libcrypto++-dev \
     libtls-dev \
     openssl \
     netcat \
