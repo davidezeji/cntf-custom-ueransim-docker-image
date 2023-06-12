@@ -13,6 +13,8 @@ RUN apk add --no-cache \
     lksctp-tools-dev \
     linux-headers
 
+RUN g++ --version
+
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION 
 
