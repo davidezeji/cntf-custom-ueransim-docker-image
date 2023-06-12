@@ -13,8 +13,12 @@ RUN apt-get update && apt-get install -y \
     cmake \
     make \
     g++ \
-    libressl-dev \
-    lksctp-tools-dev \
+    libssl-dev \
+    libcrypto++8 \
+    libtls-dev \
+    openssl \
+    netcat \
+    lksctp-tools \
     linux-headers-$UNAME
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
