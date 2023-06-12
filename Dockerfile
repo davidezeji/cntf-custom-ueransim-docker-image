@@ -8,7 +8,7 @@ ENV VERSION=$version
 
 ENV UNAME=$UNAME
 
-RUN apt update && apt search libssl
+RUN apt update && apt search libtls
 
 RUN apt-get update && apt-get install -y \
     git \
