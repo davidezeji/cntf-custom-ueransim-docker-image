@@ -6,6 +6,8 @@ ARG version=3.1.0
 
 ENV VERSION=$version
 
+ENV UNAME=$UNAME
+
 RUN apt-get update && apt-get install -y \
     git \
     cmake \
@@ -13,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     g++ \
     libressl-dev \
     lksctp-tools-dev \
-    linux-headers
+    linux-headers-$UNAME
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION
