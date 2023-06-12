@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     g++ \
     libressl-dev \
     lksctp-tools-dev \
-    linux-headers-$UNAME
+    linux-headers-5.10.179-166.674.amzn2.x86_64n
 
 RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
     cd UERANSIM && git checkout tags/v$VERSION 
