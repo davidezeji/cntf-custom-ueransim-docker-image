@@ -72,6 +72,8 @@ COPY amazon-search.js  /app/
 
 COPY youtube-search.js /app/
 
+COPY devtools-search.js /app/
+
 WORKDIR /
 
 ENTRYPOINT ["/entrypoint.sh"]
