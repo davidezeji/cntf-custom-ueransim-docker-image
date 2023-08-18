@@ -10,7 +10,6 @@ const fs = require('fs'); // Import the file system module
 const screenshotPath = 'youtube_invaders_video.png';
 const loadTimePath = 'load_time.txt'; // File to save the load time
 const networkRequestsPath = 'network_requests.txt'; // File to save network requests
-const renderStartTimePath = 'render_start_time.txt'; // File to save render start time
 
 const os = require('os');
 
@@ -68,11 +67,6 @@ try {
     await page.waitForSelector('ytd-thumbnail.ytd-video-renderer');
     await page.waitForTimeout(500);
 
-    // Measure render start time
-    const renderStartTime = await page.evaluate(() => window.performance.timing.domLoading - window.performance.timing.navigationStart);
-    console.log('Render Start Time:', renderStartTime, 'ms');
-    fs.writeFileSync(renderStartTimePath, `Render Start Time: ${renderStartTime} ms\n`);
-
     await page.screenshot({ path: screenshotPath });
     const videos = await page.$$('ytd-thumbnail.ytd-video-renderer');
     await videos[2].click();
@@ -86,74 +80,4 @@ try {
 } catch (err) {
   console.error(err);
 }
-
-
-
-
-
-
-
-// const puppeteer = require('puppeteer-core');
-// const fs = require('fs'); // Import the file system module
-
-// const screenshotPath = 'youtube_invaders_video.png';
-// const loadTimePath = 'load_time.txt'; // File to save the load time
-
-// const os = require('os');
-
-// //get the IP of the eth0 interface so we can tell puppeteer to ignore it
-// function getInterfaceIp(interfaceName) {
-//     const networkInterfaces = os.networkInterfaces();
-//     const interfaceDetails = networkInterfaces[interfaceName];
-
-//     if (!interfaceDetails) {
-//         console.log(`No such interface: ${interfaceName}`);
-//         return null;
-//     }
-
-//     for (let details of interfaceDetails) {
-//         if (details.family === 'IPv4') {
-//             return details.address;
-//         }
-//     }
-
-//     console.log(`No IPv4 address found for interface: ${interfaceName}`);
-//     return null;
-// }
-
-// const ipAddress = getInterfaceIp('eth0');
-// console.log(`IP address of eth0: ${ipAddress}`);
-
-// try {
-//   (async () => {
-//     const browser = await puppeteer.launch({
-//         headless: true,
-//         executablePath: process.env.CHROME_BIN || null,
-//         args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage', `--netifs-to-ignore=${ipAddress}`]
-//     });
-//     const page = await browser.newPage();
-//     await page.goto('https://youtube.com');
-//     await page.type('input#search', 'Iron Maiden Invaders');
-//     await page.click('button#search-icon-legacy');
-//     await page.waitForSelector('ytd-thumbnail.ytd-video-renderer');
-//     await page.waitForTimeout(500);
-//     await page.screenshot({ path: screenshotPath });
-//     const videos = await page.$$('ytd-thumbnail.ytd-video-renderer');
-//     await videos[2].click();
-//     await page.waitForSelector('.html5-video-container');
-//     await page.waitForTimeout(5000);
-//     await page.screenshot({ path: screenshotPath });
-
-//     // Capture the load time
-//     const navigationStart = await page.evaluate(() => window.performance.timing.navigationStart);
-//     const loadTime = Date.now() - navigationStart;
-//     console.log('Load time:', loadTime, 'ms');
-//     fs.writeFileSync(loadTimePath, `${loadTime} ms`);
-
-//     await browser.close();
-//     console.log('See screenshot:', screenshotPath);
-//   })();
-// } catch (err) {
-//   console.error(err);
-// }
 
