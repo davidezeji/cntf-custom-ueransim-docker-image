@@ -57,9 +57,14 @@ try {
     page.on('response', (response) => {
       const requestUrl = response.url();
       const statusCode = response.status();
-      const responseTime = response.timing().receiveHeadersEnd - response.timing().sendStart;
-      const requestInfo = `URL: ${requestUrl}, Status: ${statusCode}, Response Time: ${responseTime} ms\n`;
-      fs.appendFileSync(networkRequestsPath, requestInfo);
+      const responseTiming = response.timing();
+      if (responseTiming) {
+        const responseTime = responseTiming.receiveHeadersEnd - responseTiming.sendStart;
+        const requestInfo = `URL: ${requestUrl}, Status: ${statusCode}, Response Time: ${responseTime} ms\n`;
+        fs.appendFileSync(networkRequestsPath, requestInfo);
+      } else {
+        console.log(`No timing information available for request: ${requestUrl}`);
+      }
     });
 
     await page.type('input#search', 'Iron Maiden Invaders');
