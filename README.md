@@ -4,7 +4,7 @@
 This source code repository stores the configurations to create a custom UERANSIM docker image. This custom image includes scripts from Pupeteer (https://github.com/puppeteer/puppeteer), which enables the UERANSIM test-suite to perform unique tests on a 5g network.
 
 ## AWS - Elastic Container Registry (ECR)
-* In the event that the custom image(s) is not stored in an existing image repository, please create a new AWS ECR repository for them to be uploadeded & stored: 
+* In the event that the custom image(s) is not stored in an existing image repository, please create a new AWS ECR repository for it to be uploaded & stored: 
     * Step 1 - Create an ECR repository: https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html
     * Step 2 - In the ".gitlab-ci.yml" file, change line 5 to represent the repository registry URL for your AWS ECR repository
 
@@ -12,7 +12,7 @@ This source code repository stores the configurations to create a custom UERANSI
 Prerequisites:
 
 * *Please ensure that you have configured the AWS CLI to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles*: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
-* *Please ensure that the "CNTF-Main" branch has been deployed, as this ensures that the cluster and other necessary AWS infrastructure are available to support the execution of scripts in this repository.*  
+* *Please ensure that the pipeline in the "CNTF-Main" repository has been successfully deployed, as this ensures that all necessary components are available to support the execution of scripts in this repository.*  
 * *Please ensure that there is an existing image repository where these cusotm docker images can be stored.*
 
 
