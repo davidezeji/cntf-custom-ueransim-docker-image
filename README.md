@@ -22,7 +22,7 @@ Steps:
 3. Perform these actions inside of the Gitlab repository:
     * On the left side of the screen click the drop-down arrow next to "Build" and select "Pipelines"
     * In the top right hand corner select "Run Pipeline"
-    * In the drop-down under "Run for branch name or tag" select the appropriate name for this branch and click "Run Pipeline"
+    * In the drop-down under "Run for branch name or tag" select the appropriate branch name and click "Run Pipeline"
     * Once again, click the drop-down arrow next to "Build" and select "Pipelines", you should now see the pipeline being executed
 
 ## Project Structure:
