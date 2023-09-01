@@ -8,7 +8,7 @@ Prerequisites:
 
 * *Please ensure that you have configured the AWS CLI to authenticate to an AWS environment where you have adequate permissions to create an EKS cluster, security groups and IAM roles*: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
 * *Please ensure that the "CNTF-Main" branch has been deployed, as this ensures that the cluster and other necessary AWS infrastructure are available to support the execution of scripts in this repository.*  
-* *In the event that these images are not stored in an existing image repository, please create an AWS ECR repository for the custom image(s)to be uploadeded & stored*: 
+* *In the event that these images are not stored in an existing image repository, please create an AWS ECR repository for the custom image(s) to be uploadeded & stored*: 
     * Step 1 - Create an ECR repository:https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html
     * Step 2 - In the ".gitlab-ci.yml" file, change line 5 to represent the repository registry URL for your AWS ECR repository
 
