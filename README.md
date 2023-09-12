@@ -44,3 +44,6 @@ Steps:
 |
 └── youtube-search.js          contains configurations to simulate watching a video on youtube.com and can be inserted into the dockerfile to modify the ueransim test-suite
 ```
+## Gitlab CI
+**Pipeline Stages:**
+* build - builds the customer UERANSIM docker image and pushes it to an AWS ECR repository
