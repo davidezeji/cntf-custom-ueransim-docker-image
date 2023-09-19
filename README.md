@@ -39,7 +39,7 @@ Steps:
     * In Gitlab, Under "Assigned project runners" you should now see that your runner has a green circle next to it, signaling a "ready" status
     * **How to re-use this runner for other CNTF repositories:**
         * Hover over "Settings" and select "CI/CD"
-        * Under "Other available runners", find the runner you have created and select "Enable for this project".
+        * Under "Other available runners", find the runner you have created and select "Enable for this project"
 
 4. Authenticate [Gitlab with AWS](https://docs.gitlab.com/ee/ci/cloud_deployment/)
 
