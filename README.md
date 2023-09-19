@@ -6,7 +6,7 @@ This source code repository stores the configurations to create a custom UERANSI
 ## AWS - Elastic Container Registry (ECR)
 * In the event that the custom image(s) is not stored in an existing image repository, please create a new AWS ECR repository for it to be uploaded & stored: 
     * Step 1 - Create an ECR repository: https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html
-    * Step 2 - In the ".gitlab-ci.yml" file, change line 5 to represent the repository registry URL for your AWS ECR repository
+    * Step 2 - In the ".gitlab-ci.yml" file, change line 5 to represent the repository registry URI for your AWS ECR repository
 
 ## Deployment
 Prerequisites:
