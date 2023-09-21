@@ -1,8 +1,9 @@
 build-and-push-to-ecr:
   stage: build
+  when: manual
   variables: 
     AWS_DEFAULT_REGION: us-east-1
-    CI_REGISTRY_IMAGE: 018300759195.dkr.ecr.us-east-1.amazonaws.com/cntf-ueransim-puppeteer # Change this value to represent your corresponding registry URL for AWS ECR 
+    CI_REGISTRY_IMAGE: 018300759195.dkr.ecr.us-east-1.amazonaws.com/cntf-ueransim-puppeteer # Change this value to represent your corresponding registry URI for AWS ECR 
     IMAGE_TAG: 3.2.6
   image:
     name: gcr.io/kaniko-project/executor:debug
@@ -14,3 +15,24 @@ build-and-push-to-ecr:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:${IMAGE_TAG}"
+
+build-and-push-to-docker-hub:
+  stage: build
+  when: manual
+  variables:
+    DOCKER_HUB_USERNAME:  # change this value into a variable for privacy concerns
+    DOCKER_HUB_PASSWORD:  # change this value into a variable for privacy concerns
+    CI_REGISTRY_IMAGE: docker.io/cntf1/ueransim-puppeteer
+    IMAGE_TAG: 3.2.6
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"$(echo -n $DOCKER_HUB_USERNAME:$DOCKER_HUB_PASSWORD | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:${IMAGE_TAG}"
+
+
