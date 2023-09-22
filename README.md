@@ -1,12 +1,12 @@
 # CNTF - Custom UERANSIM Docker Image
 
 ## Purpose
-This source code repository stores the configurations to create a custom UERANSIM docker image. This custom image includes scripts from Puppeteer (https://github.com/puppeteer/puppeteer), which enables the UERANSIM test-suite to simulate a UE performing normal user activities (e.g. watching YouTube, browsing websites, etc.) while connected to a 5g network.
+This source code repository stores the configurations to create a custom UERANSIM docker image. This custom image includes scripts from [Puppeteer](https://github.com/puppeteer/puppeteer), which enables the UERANSIM test-suite to simulate a UE performing normal user activities (e.g. watching YouTube, browsing websites, etc.) while connected to a 5g network.
 
 ## Storage
 In the event that this docker image is further developed, please store it in either AWS ECR (private image repository) or Dockerhub (public image repository)
 * AWS ECR: 
-    * Step 1 - Create an ECR repository: https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html
+    * Step 1 - Create an [ECR repository](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html)
     * Step 2 - In the ".gitlab-ci.yml" file, change line 5 to represent the repository registry URI for your AWS ECR repository
 
 * Dockerhub:
