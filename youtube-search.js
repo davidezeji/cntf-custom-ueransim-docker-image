@@ -1,4 +1,4 @@
-# Script which simulates a UE watching a youtube video
+# Script which simulates a UE watching a YouTube video
 /**
  * @name Youtube search
  *
