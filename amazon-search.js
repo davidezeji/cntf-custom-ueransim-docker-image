@@ -1,4 +1,4 @@
-# Script which automates a UE interacting with www.Amazon.com
+# Script which simulates a UE interacting with www.Amazon.com
 /**
  * @name Amazon search
  *
