@@ -1,3 +1,4 @@
+# Script which automates a UE interacting with Devtools
 const puppeteer = require('puppeteer-core');
 
 try {
