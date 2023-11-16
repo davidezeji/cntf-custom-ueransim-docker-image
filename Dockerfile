@@ -1,3 +1,4 @@
+// UERANSIM Dockerfile with modifications that allow custom scripts to interact with the test suite application
 FROM alpine:latest as builder
 
 ARG version=3.2.6
