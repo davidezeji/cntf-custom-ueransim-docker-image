@@ -3,7 +3,7 @@ build-and-push-to-ecr:
   when: manual
   variables: 
     AWS_DEFAULT_REGION: us-east-1
-    CI_REGISTRY_IMAGE: 018300759195.dkr.ecr.us-east-1.amazonaws.com/cntf-ueransim-puppeteer # Change this value to represent your corresponding registry URI for AWS ECR 
+    CI_REGISTRY_IMAGE: # Change this value to represent your corresponding registry URI for AWS ECR 
     IMAGE_TAG: 3.2.6
   image:
     name: gcr.io/kaniko-project/executor:debug
